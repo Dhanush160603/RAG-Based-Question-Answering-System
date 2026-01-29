@@ -73,9 +73,7 @@ rag-app/
 
 │ └── schemas.py
 
-├── requirements.txt
-
-└── README.md
+└── requirements.txt
 
 
 ---
