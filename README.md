@@ -44,23 +44,41 @@ The system follows a standard RAG pipeline:
 
 ## 📂 Project Structure
 rag-app/
+
 ├── app/
+
 │ ├── main.py
+
 │ ├── services/
+
 │ │ ├── parser.py
+
 │ │ ├── chunker.py
+
 │ │ ├── embeddings.py
+
 │ │ ├── vectorstore.py
+
 │ │ └── llm.py
+
 │ ├── workers/
+
 │ │ └── ingest.py
+
 │ ├── utils/
+
 │ │ └── metrics.py
+
 │ └── models/
+
 │ └── schemas.py
+
 ├── docs/
+
 │ └── architecture.png
+
 ├── requirements.txt
+
 └── README.md
 
 
