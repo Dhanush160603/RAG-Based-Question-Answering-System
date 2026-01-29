@@ -73,10 +73,6 @@ rag-app/
 
 │ └── schemas.py
 
-├── docs/
-
-│ └── architecture.png
-
 ├── requirements.txt
 
 └── README.md
