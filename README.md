@@ -43,3 +43,96 @@ The system follows a standard RAG pipeline:
 ---
 
 ## 📂 Project Structure
+rag-app/
+├── app/
+│ ├── main.py
+│ ├── services/
+│ │ ├── parser.py
+│ │ ├── chunker.py
+│ │ ├── embeddings.py
+│ │ ├── vectorstore.py
+│ │ └── llm.py
+│ ├── workers/
+│ │ └── ingest.py
+│ ├── utils/
+│ │ └── metrics.py
+│ └── models/
+│ └── schemas.py
+├── docs/
+│ └── architecture.png
+├── requirements.txt
+└── README.md
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
+```bash
+git clone <your-github-repository-url>
+cd rag-app
+
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+
+3️⃣ Configure Environment Variables
+Gemini API
+setx GOOGLE_API_KEY "your_api_key_here"
+
+OpenAI API (Optional)
+setx OPENAI_API_KEY "your_api_key_here"
+
+
+Restart the terminal after setting environment variables.
+
+▶️ Run the Application
+python -m uvicorn app.main:app --reload
+
+
+Open in browser:
+
+Swagger UI: http://127.0.0.1:8000/docs
+
+📤 Upload a Document
+
+POST /upload
+Upload a PDF or TXT file to be indexed into the system.
+
+❓ Ask a Question
+
+POST /ask
+
+Example request:
+
+{
+  "question": "What is RAG?",
+  "filename": "sample_rag.pdf"
+}
+
+📊 Sample Response
+{
+  "question": "What is RAG?",
+  "answer": "Retrieval-Augmented Generation (RAG) is an AI technique that combines information retrieval with language model generation.",
+  "retrieved_context": "...",
+  "similarity_score": 0.20,
+  "latency_seconds": 2.5
+}
+
+📈 Metrics Tracked
+
+Latency: Time taken to generate an answer
+
+Similarity Score: Semantic similarity between query and retrieved chunks
+
+⚠️ Limitations
+
+Local vector store (single-node)
+
+No document versioning
+
+Optimized for small to medium document sets
+
+✅ Status
+
+This project fully satisfies the requirements for a RAG-Based Question Answering System and is ready for evaluation and submission.
